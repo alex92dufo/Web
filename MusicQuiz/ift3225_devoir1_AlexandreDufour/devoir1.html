@@ -1,0 +1,453 @@
+<!--Alexandre Dufour, p1054564-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Questionnaire musical</title>
+        <!-- Bootstrap core CSS -->
+        <script src="jquery.js"></script>
+        <link href="https://getbootstrap.com/docs/3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+        <link rel="icon" href="images/note.jpg">
+        <link rel = "stylesheet" href = "devoir1.css" type = "text/css"/>
+    </head>
+    
+    <body>
+        <script src="jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src = "devoir1.js"></script>
+        
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button id = "toggleButton" type="button" class="navbar-toggle collapsed" data-toggle=".navbar-collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#jumbotron">Passion musique</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id = "ul" class="nav navbar-nav">
+                        <li class="nav-item"><a class = "nav-link" href="#jumbotron">Accueil</a></li>
+                        <li class = "nav-item"><a class = "nav-link" href="#tonalite">Tonalités</a></li>
+                        <li class = "nav-item"><a class = "nav-link" href="#majeur">Mode Majeur</a></li>
+                        <li class = "nav-item"><a class = "nav-link" href="#mineur">Mode Mineur</a></li>
+                        <li class = "nav-item"><a class = "nav-link" href="#accord">Accords</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        
+        
+        
+        <div id = "jumbotron" class="jumbotron">
+            <div class = "container">
+                <h1>Test de connaissances musicales</h1>
+                <p>Répondez aux questions en utilisant votre clavier en mode <b>normal</b> 
+                    ou en choisissant parmis un choix de réponses en mode <b>assisté</b>.</p>
+            </div>
+             <div id = "ready" class = "container">
+                <button id="readyNormal" type="button" class="ready col-md-1 btn btn-lg btn-primary">Normal</button>
+                <button id="readyAssisted" type="button" class="ready col-md-1 btn btn-lg btn-primary">Assisté</button>    
+            </div>
+            <div class = "container">
+                <h3><label class="nav-pills">Dernier score:</label> <span id="lastScore" class="badge">0</span></h3>
+                <h3><label id = "result" class="nav-pills">Bonne chance!</label></h3>	
+            </div>
+            
+        </div>
+        
+      <!--Section de jeu-->
+        <div class = "container " id = "jeu">
+            <!--Paramètre du jeu -->
+            <div class = "container parametre">
+                <h3><label class="nav-pills">score:</label> <span id="score" class="badge">0</span></h3>	
+                <h3><label class="col-md-3 ">Temps pour répondre</label>
+                    <label id="timer" class="col-md-2 label label-default"></label></h3>            
+            </div>
+            <div class = "container question">
+                <h3><label class="col-md-2 label label-default">Question</label></h3>
+                <h4><label id="testQuestion" class="col-md-12"></label></h4>
+            </div>
+            
+            <div id = "normal" class = "container answer">
+                <div class = "testAnswer">
+                    <p><label>Réponse: <input id = "testAnswer" type = "text" placeholder="Ma réponse"/></label></p>
+                <button id="submit" type="button" class="col-md-4 btn btn-lg btn-primary">Soumettre la réponse</button>
+                </div>
+            </div>
+            
+            <div id = "assisted" class = "container answer">
+                <div class = "testAnswer">
+                    <button id="choice1" type="button" class="col-md-1 btn btn-lg btn-primary">Choice1</button>
+                    <button id="choice2" type="button" class="col-md-1 btn btn-lg btn-primary">Choice2</button>
+                    <button id="choice3" type="button" class="col-md-1 btn btn-lg btn-primary">Choice3</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--Section connaissance-->
+        <div class = "container connaissances">
+            
+            <!-- Tonalités -->
+            <div id = "tonalite" class = "section section1">
+                <h1>Les Tonalités</h1>
+                    <span class = "info">Dans la théorie de la musique, on retrouve 15 
+                        tonalités différentes:</span>
+                    <div class = "container-fluid">
+                        <div class = "row">
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question1" alt = "7b" height = "45" src = "images/7.png" >
+                                <p class = "answer1">7b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question2" alt = "6b" height = "45" src = "images/6.png" >
+                                <p class = "answer2">6b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question3" alt = "5b" height = "45" src = "images/5.png" >
+                                <p class = "answer3">5b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question4" alt = "4b" height = "45" src = "images/4.png" >
+                                <p class = "answer4">4b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question5" alt = "3b" height = "45" src = "images/3.png" >
+                                <p class = "answer5">3b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question6" alt = "2b" height = "45" src = "images/2.png" >
+                                <p class = "answer6">2b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question7" alt = "1b" height = "45" src = "images/1.png" >
+                                <p class = "answer7">1b</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question8" alt = "0" height = "45" src = "images/0.png" >
+                                <p class = "answer8">0</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question9" alt = "1#" height = "45" src = "images/8.png" >
+                                <p class = "answer9">1#</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question10" alt = "2#" height = "45" src = "images/9.png" >
+                                <p class = "answer10">2#</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question11" alt = "3#" height = "45" src = "images/10.png" >
+                                <p class = "answer11">3#</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question12" alt = "4#" height = "45" src = "images/11.png" >
+                                <p class = "answer12">4#</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question13" alt = "5#" height = "45" src = "images/12.png" >
+                                <p class = "answer13">5#</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question14" alt = "6#" height = "45" src = "images/13.png" >
+                                <p class = "answer14">6#</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <img class = "question question15" alt = "7#" height = "45" src = "images/14.png" >
+                                <p class = "answer15">7#</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+            <!-- Mode Majeur -->
+            <div id = "majeur" class = "section section2">
+                <h1>Le mode majeur</h1>
+                  <span class = "info">Chacune de ces tonalités ont deux modes différents,
+                    soit le mode majeur et le mode mineur. Le mode majeur de chaque tonalité
+                    sont les suivantes:</span>
+                    <div class = "container-fluid">
+                        <div class = "row">
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question1">7b</p>
+                                <p class = "answer1">DObM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question2">6b</p>
+                                <p class = "answer2">SOLbM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question3">5b</p>
+                                <p class = "answer3">RÉbM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question4">4b</p>
+                                <p class = "answer4">LAbM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question5">3b</p>
+                                <p class = "answer5">MIbM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question6">2b</p>
+                                <p class = "answer6">SIbM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question7">1b</p>
+                                <p class = "answer7">FAM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question8">0</p>
+                                <p class = "answer8">DOM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question9">1#</p>
+                                <p class = "answer9">SOLM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question10">2#</p>
+                                <p class = "answer10">RÉM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question11">3#</p>
+                                <p class = "answer11">LAM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question12">4#</p>
+                                <p class = "answer12">MIM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question13">5#</p>
+                                <p class = "answer13">SIM</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question14">6#</p>
+                                <p class = "answer14">FA#M</p>
+                            </div>
+                            <div class = "notes col-sm-2 col-xs-3">
+                                <p class = "question question15">7#</p>
+                                <p class = "answer15">DO#M</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+            <!-- Mode mineur -->
+            <div id = "mineur" class = "section section3">
+                <h1>Le mode mineur</h1>
+                <span class = "info">Le mode mineur de chaque tonalité
+                    sont les suivantes:</span>
+                <div class = "container-fluid">
+                    <div class = "row" >
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question1">7b</p>
+                            <p class = "answer1">LAbm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question2">6b</p>
+                            <p class = "answer2">MIbm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question 3">5b</p>
+                            <p class = "answer3">SIbm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question4">4b</p>
+                            <p class = "answer4">FAm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question5">3b</p>
+                            <p class = "answer5">DOm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question6">2b</p>
+                            <p class = "answer6">SOLm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question7">1b</p>
+                            <p class = "answer7">RÉm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question8">0</p>
+                            <p class = "answer8">LAm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question9">1#</p>
+                            <p class = "answer9">MIm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question10">2#</p>
+                            <p class = "answer10">SIm</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question11">3#</p>
+                            <p class = "answer11">FA#m</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question12">4#</p>
+                            <p class = "answer12">DO#m</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question13">5#</p>
+                            <p class = "answer13">SOL#m</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question14">6#</p>
+                            <p class = "answer14">RÉ#m</p>
+                        </div>
+                        <div class = "notes col-sm-2 col-xs-3">
+                            <p class = "question question15">7#</p>
+                            <p class = "answer15">LA#m</p>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+            
+            <!--Accords-->
+            <div id = "accord" class = "section section4">
+                <h1>Les accords</h1>  
+                <span class = "info">Un accord est un ensemble de notes utilisées au
+                    même temps. Voici les différents accords possible:</span>
+                <div class = "container-fluid">
+                    <div class = "row" >
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question1">DObM</p>
+                            <p class = "answer1">DOb MIb SOLb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question2">SOLbM</p>
+                            <p class = "answer2">SOLb SIb RÉb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question3">RÉbM</p>
+                            <p class = "answer3">RÉb FA LAb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question4">LAbM</p>
+                            <p class = "answer4">LAb DO MIb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question5">MIbM</p>
+                            <p class = "answer5">MIb SOL SIb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question6">SIbM</p>
+                            <p class = "answer6">SIb RÉ FA</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question7">FAM</p>
+                            <p class = "answer7">FA LA DO</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question8">DOM</p>
+                            <p class = "answer8">DO MI SOL</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question9">SOLM</p>
+                            <p class = "answer9">SOL SO RÉ</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question10">RÉM</p>
+                            <p class = "answer10">RÉ FA# LA</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question11">LAM</p>
+                            <p class = "answer11">LA DO# MI</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question12">MIM</p>
+                            <p class = "answer12">MI SOL# SI</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question13">SIM</p>
+                            <p class = "answer13">SI RÉ# FA#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question14">FA#M</p>
+                            <p class = "answer14">FA# LA# DO#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question15">DO#M</p>
+                            <p class = "answer15">DO# MI# SOL#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question16">LAbm</p>
+                            <p class = "answer16">LAb DOb MIb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question17">MIbm</p>
+                            <p class = "answer17">MIb SOLb SIb</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question18">SIbm</p>
+                            <p class = "answer18">SIb RÉb FA</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question19">FAm</p>
+                            <p class = "answer19">FA LAb DO</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question20">DOm</p>
+                            <p class = "answer20">DO MIb SOL</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question21">SOLm</p>
+                            <p class = "answer21">SOL SIb RÉ</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question22">RÉm</p>
+                            <p class = "answer22">RÉ FA LA</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question23">LAm</p>
+                            <p class = "answer23">LA DO MI</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question24">MIm</p>
+                            <p class = "answer24">MI SOL SI</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question25">SIm</p>
+                            <p class = "answer25">SI RÉ FA#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question26">FA#m</p>
+                            <p class = "answer26">FA# LA DO#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question27">DO#m</p>
+                            <p class = "answer27">DO# MI SOL#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question28">SOL#m</p>
+                            <p class = "answer28">SOL# SI RÉ#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question29">RÉ#m</p>
+                            <p class = "answer29">RÉ# FA# LA#</p>
+                        </div>
+                        <div class = "notes col-sm-3 col-xs-3">
+                            <p class = "question question30">LA#m</p>
+                            <p class = "answer30">LA# DO# MI#</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <footer>
+                <a href="http://validator.w3.org/check?uri=referer"><img src="images/html5.png" alt="HTML5 valid !" width=22 /></a>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="images/css3.png" alt="CSS valid !" width=20 /></a>
+                <p>Site internet réalisé par: <b>Alexandre Dufour, p1054564</b>.</p>
+        </footer>
+    </body>
+</html>

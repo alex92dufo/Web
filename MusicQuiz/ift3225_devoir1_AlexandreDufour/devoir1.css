@@ -1,0 +1,41 @@
+/* Alexandre Dufour, p1054564 */
+
+body{
+    margin-top:20px;
+}
+
+.question {
+    font-weight: bold;
+}
+
+.info {
+    font-weight: bold;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+footer{
+    margin: auto;
+    margin-top: 50px;
+    width: 50%;
+    text-align: center;
+}
+
+.notes{
+    margin: 10px;
+    border-style: groove;
+    text-align: center;
+}
+.ready{
+    margin: 10px;
+}
+
+.navbar{
+    background-color: lightyellow;
+}
+
+.nav-item:hover{
+    background-color: lightblue;
+}
